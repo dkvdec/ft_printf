@@ -36,14 +36,11 @@ And bonuses:
 
 6) Colours
 
-  Red           {r-}
-  
-  Bold Red		  {r+}
-  
-  Green			    {g-}
-  
-  Bold Green	  {g+}
-  
+			Red           {r-}
+  		Bold Red		  {r+}
+  		Green			    {g-}
+			Bold Green	  {g+}
+ 
   Yellow			  {y-}
   
   Bold Yellow	  {y+}
