@@ -36,25 +36,16 @@ And bonuses:
 
 6) Colours
 
-			Red           {r-}
-  		Bold Red		  {r+}
-  		Green			    {g-}
-			Bold Green	  {g+}
- 
-  Yellow			  {y-}
-  
-  Bold Yellow	  {y+}
-  
-  Blue			    {b-}
-  
-  Bold Blue		  {b+}
-  
-  Magenta			  {m-}
-  
-  Bold Magenta  {m+}
-  
-  Cyan			    {c-}
-  
-  Bold Cyan		  {c+}
-  
-  Reset			    {w-}/{w+}  
+		Red		{r-}
+  		Bold Red	{r+}
+  		Green		{g-}
+		Bold Green	{g+}
+		Yellow		{y-}
+		Bold Yellow	{y+}
+		Blue		{b-}
+		Bold Blue	{b+}
+		Magenta		{m-}
+		Bold Magenta	{m+}
+		Cyan		{c-}
+		Bold Cyan	{c+}
+		Reset		{w-}/{w+}  
