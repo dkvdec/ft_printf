@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:23:06 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 17:15:25 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 20:53:45 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		grep_dot_star(char **str, int *i, int *j)
 {
 	(*j)++;
 	while (*((*str) + (*i) + (*j)) && ft_isdigit(*((*str) + (*i) + (*j))))
-		j++;
+		(*j)++;
 	if (*((*str) + (*i) + (*j)) == '$')
 	{
 		t_f.pr = (int)silent_grep(ft_atoi((*str) + (*i) + 2));
@@ -35,6 +35,7 @@ void		grep_dot_star(char **str, int *i, int *j)
 	}
 	else
 	{
+		t_type.ds++;
 		t_f.pr = (t_f.w < 0) ? t_f.w - 1 : -1;
 		(*i) += 1;
 	}
@@ -75,11 +76,13 @@ int			grep_star(char *str, int i)
 		}
 		else
 		{
+			t_type.s++;
 			t_f.w = (t_f.pr < 0) ? t_f.pr - 1 : -1;
 		}
 	}
 	else
 	{
+		t_type.s++;
 		t_f.w = (t_f.pr < 0) ? t_f.pr - 1 : -1;
 	}
 	return (i);

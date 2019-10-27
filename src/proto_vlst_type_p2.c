@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 17:20:10 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 17:20:36 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 21:29:41 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	type_reset(void)
 	t_type.snb = 0;
 	t_type.s = 0;
 	t_type.nb = 0;
-	t_type.L = 0;
+	t_type.lb = 0;
 }
 
 int		type_catcher(char c)
@@ -33,9 +33,9 @@ int		type_catcher(char c)
 		return (3);
 	if (c == 's')
 		return (4);
-	if ((c == 'f' || c == 'F') && t_type.L == 0)
+	if ((c == 'f' || c == 'F') && t_type.lb == 0)
 		return (5);
-	if ((c == 'f' || c == 'F') && t_type.L > 0)
+	if ((c == 'f' || c == 'F') && t_type.lb > 0)
 		return (6);
 	if (c == 'p')
 		return (7);

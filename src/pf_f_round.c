@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 21:10:27 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 17:48:36 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 21:10:52 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ int			deep_explore(int j)
 	{
 		if (t_result.full_nbr[j] > '0')
 			return (1);
-		/* else if (t_result.full_nbr[j] < '5')
-			return (0); */
 	}
 	return (0);
 }

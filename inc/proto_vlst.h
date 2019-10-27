@@ -6,16 +6,16 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 16:54:51 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 18:18:24 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 21:30:20 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PROTO_VLST_H
 # define PROTO_VLST_H
 
-#include <stdarg.h>
-#include <stdio.h>
-#include "libft.h"
+# include <stdarg.h>
+# include <stdio.h>
+# include "./../libft/libft.h"
 
 typedef	struct			s_vlst{
 	int					nbr;
@@ -35,42 +35,38 @@ struct					s_line{
 }						t_line;
 
 struct					s_type{
-	int					dsnb;	// dot_star_number_bucks	.*5$
-	int					ds;		// dot_star					.*
-	////////////////////////////////////////////////////
-	int					snb;	// star_number_bucks		*5$
-	int					s;		// star						*
-	////////////////////////////////////////////////////
-	int					nb;		// number_bucks				5$
-	int					L;		// double/long double recognition
+	int					dsnb;
+	int					ds;
+	int					snb;
+	int					s;
+	int					nb;
+	int					lb;
 }						t_type;
 
 struct					s_lres{
-	int					l_counter;		// linear_counter
-	int					mb_counter;		// max_bucks_counter
-	int					sb_c;		// star_bucks_counter
-	////////////////////////////////////////////////////
-	int					dot_flag;		// dot_flag
-	int					star_flag;		// star_flag
-	int					bucks_flag;		// bucks_flag
-	////////////////////////////////////////////////////
-	int					error_counter;	// error_counter
+	int					l_counter;
+	int					mb_counter;
+	int					sb_c;
+	int					dot_flag;
+	int					star_flag;
+	int					bucks_flag;
+	int					error_counter;
 }						t_lres;
 
 struct					s_f {
-	int					h;				// h/hh
-	int					l;				// l/ll
-	int					jz;				// j/z
-	int					L;				// L
-	int					sh;				// #
-	int					z;				// 0
-	int					m;				// -
-	int					pl;				// +
-	int					sp;				// _
-	int					w;				// 123		
-	int					pz;				// .
-	int					pr;      		// .123
-	int					b;				// $
+	int					h;
+	int					l;
+	int					jz;
+	int					lb;
+	int					sh;
+	int					z;
+	int					m;
+	int					pl;
+	int					sp;
+	int					w;
+	int					pz;
+	int					pr;
+	int					b;
 }						t_f;
 
 struct					s_recon{
@@ -98,11 +94,11 @@ struct					s_buff{
 */
 
 struct					s_result{
-	char*				inter;
+	char				*inter;
 	int					inter_len;
-	char*				fract;
+	char				*fract;
 	int					fract_len;
-	char*				full_nbr;
+	char				*full_nbr;
 }						t_result;
 
 /*
@@ -113,9 +109,11 @@ int						skipable(char c);
 int						skip_able(char c);
 int						cs_check(char c);
 void					safe_join(char **str, size_t len);
-void 					safe_sub_join(char *str, size_t len);
-char					*ft_memjoin(char const *s1, size_t l1, char const *s2, size_t l2);
-char					*ft_memsub(char const *s, unsigned int start, size_t len);
+void					safe_sub_join(char *str, size_t len);
+char					*ft_memjoin(char const *s1, size_t l1,
+						char const *s2, size_t l2);
+char					*ft_memsub(char const *s,
+						unsigned int start, size_t len);
 
 /*
 ** PROTO_CORE_FUNCTIONS
@@ -123,6 +121,7 @@ char					*ft_memsub(char const *s, unsigned int start, size_t len);
 
 void					pre_get_vhelper(void);
 void					pre_get_vtail(void);
+void					pre_get_turn(void);
 void					pre_get_value(char c);
 void					get_value(char c);
 void					pf_core_helper(char **str, int *i);
@@ -161,12 +160,15 @@ void					pf_dec(long long n, int b);
 */
 
 int						ltoa_base_nbr_size(unsigned long long int nb, int base);
-int						ltoa_base_prec_proc(unsigned long long int nb,int nbl, int base);
+int						ltoa_base_prec_proc(unsigned long long int nb,
+						int nbl, int base);
 void					ltoa_base_prec_fill(char **str, int base, int pre);
 char					*ltoa_base_prec(unsigned long long int nb, int base);
-void					ltoa_base_flag_proc(unsigned long long int nb,int base);
+void					ltoa_base_flag_proc(unsigned long long int nb,
+						int base);
 void					set_to_lower(char **str);
-void					pf_uns_oct_hex(unsigned long long int nb, int base, int tl);
+void					pf_uns_oct_hex(unsigned long long int nb,
+						int base, int tl);
 
 /*
 ** CHAR_STR_PTR
@@ -216,7 +218,9 @@ void					size_counter_reset(void);
 void					size_count_resulter(const char *str, int i);
 int						size_max_finder(void);
 
-/* VLST_MANAGE_FUNCTIONS */
+/*
+** VLST_MANAGE_FUNCTIONS
+*/
 
 void					*silent_grep(int nbr);
 void					get_args(va_list vl);
@@ -227,7 +231,9 @@ void					vlst_walk(int nbr);
 void					vlst_starbucks(int nbr);
 void					vlst_dstr(void);
 
-/* FLOAT_FUNCTIONS */
+/*
+** FLOAT_FUNCTIONS
+*/
 
 int						ft_bitlen(unsigned long mant);
 void					buff_zero(void);
@@ -283,8 +289,6 @@ void					get_ldouble(void);
 ** 4 - float
 ** 5 - void *
 **
-**
-**
 ** ===================== MY_BONUSES =====================
 **
 ** 1) *
@@ -292,8 +296,6 @@ void					get_ldouble(void);
 ** 3) *$ jz
 ** 4) bold
 ** 5) colour
-**
-**
 **
 ** ===================== ALL_FLAGS =====================
 **
@@ -303,8 +305,6 @@ void					get_ldouble(void);
 ** #0-+_
 ** precision === greps number starting with non zero character
 ** width === greps number starting with . folowing by non zero character
-**
-**
 **
 ** ===================== ALL_COLOURS =====================
 **
@@ -321,6 +321,4 @@ void					get_ldouble(void);
 ** [0;36m	Cyan			{c-}
 ** [1;36m	Bold Cyan		{c+}
 ** [0m		Reset			{w-}/{w+}
-** 
 */
-

@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 17:11:48 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 17:12:02 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 21:28:39 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,22 @@ void		pre_get_vtail(void)
 	}
 }
 
+void		pre_get_turn(void)
+{
+	if (t_f.w >= 0 && t_type.s)
+		if (t_connect.current->next != NULL)
+			t_connect.current = t_connect.current->next;
+	if (t_f.pr >= 0 && t_type.ds)
+		if (t_connect.current->next != NULL)
+			t_connect.current = t_connect.current->next;
+}
+
 void		pre_get_value(char c)
 {
 	if (c == '\0')
 		return ;
+	if ((t_f.w >= 0 && t_type.s) || (t_f.pr >= 0 && t_type.ds))
+		pre_get_turn();
 	if (t_f.w < 0 && t_f.pr < 0)
 		pre_get_vhelper();
 	else if (t_f.w < 0)
@@ -92,9 +104,9 @@ void		get_value(char c)
 		pf_uns_oct_hex((unsigned long long int)t_connect.current->value, 16, 1);
 	else if (c == 'X')
 		pf_uns_oct_hex((unsigned long long int)t_connect.current->value, 16, 0);
-	else if ((c == 'f' || c == 'F') && t_f.L == 0)
+	else if ((c == 'f' || c == 'F') && t_f.lb == 0)
 		pf_double();
-	else if ((c == 'f' || c == 'F') && t_f.L > 0)
+	else if ((c == 'f' || c == 'F') && t_f.lb > 0)
 		pf_ldouble();
 	if (t_connect.current && t_connect.current->next != NULL && c != '%')
 		t_connect.current = t_connect.current->next;

@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 17:14:33 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 17:15:12 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 21:29:08 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		reset_f(void)
 	t_f.h = 0;
 	t_f.l = 0;
 	t_f.jz = 0;
-	t_f.L = 0;
+	t_f.lb = 0;
 	t_f.sh = 0;
 	t_f.z = 0;
 	t_f.m = 0;
@@ -27,6 +27,8 @@ void		reset_f(void)
 	t_f.pz = 0;
 	t_f.pr = 0;
 	t_f.b = 0;
+	t_type.s = 0;
+	t_type.ds = 0;
 }
 
 int			easy_flags(char c)
@@ -42,7 +44,7 @@ int			easy_flags(char c)
 
 void		flag_recognition(char c)
 {
-	t_f.L = (c == 'L') ? t_f.L + 1 : t_f.L;
+	t_f.lb = (c == 'L') ? t_f.lb + 1 : t_f.lb;
 	t_f.sh = (c == '#') ? t_f.sh + 1 : t_f.sh;
 	t_f.z = (c == '0') ? t_f.z + 1 : t_f.z;
 	t_f.m = (c == '-') ? t_f.m + 1 : t_f.m;

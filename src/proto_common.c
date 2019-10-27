@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 17:15:51 by dheredat          #+#    #+#             */
-/*   Updated: 2019/10/26 17:10:02 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/10/26 21:28:24 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			cs_check(char c)
 int			skipable(char c)
 {
 	if (c == 'L')
-		t_type.L++;
+		t_type.lb++;
 	if (c == 'h' || c == 'l' || c == '$'
 	|| c == '\'' || c == '#' || c == '+'
 	|| c == '-' || c == ' ' || c == '0'
