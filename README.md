@@ -35,16 +35,29 @@ And bonuses:
 5) j/z flags (working as priority ll flag)
 
 6) Colours
+
   Red           {r-}
+  
   Bold Red		  {r+}
+  
   Green			    {g-}
+  
   Bold Green	  {g+}
+  
   Yellow			  {y-}
+  
   Bold Yellow	  {y+}
+  
   Blue			    {b-}
+  
   Bold Blue		  {b+}
+  
   Magenta			  {m-}
+  
   Bold Magenta  {m+}
+  
   Cyan			    {c-}
+  
   Bold Cyan		  {c+}
+  
   Reset			    {w-}/{w+}  
