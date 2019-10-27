@@ -44,7 +44,7 @@ And bonuses:
 		Bold Yellow	{y+}
 		Blue		{b-}
 		Bold Blue	{b+}
-		Magenta		{m-}
+		Magenta 	{m-}
 		Bold Magenta	{m+}
 		Cyan		{c-}
 		Bold Cyan	{c+}
