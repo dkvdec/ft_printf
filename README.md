@@ -3,7 +3,9 @@
 My project completes the mandatory part:
 
 • You have to recode the libc’s printf function.
+
 • Your function will be called ft_printf and will be prototyped similarly to printf.
+
 • You won’t do the buffer management in the printf function.
 • You have to manage the following conversions: csp
 • You have to manage the following conversions: diouxX with the following flags: hh, h, l and ll.
