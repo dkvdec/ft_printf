@@ -24,17 +24,17 @@ My project completes the mandatory part:
 
 And bonuses:
 
-1) Long arithmetic (can print whole LDBL_MIN with precision .16382)
+1)	Long arithmetic	(can print whole LDBL_MIN with precision .16382)
 
-2) */.* (filling the width/pricision with arguments from va_args)
+2)	*/.* (filling the width/pricision with arguments from va_args)
 
-3) n$ (printing the n-th element from va_args)
+3)	n$ (printing the n-th element from va_args)
 
-4) *n$/.*n$ (filling the width/pricision with n-th argument from va_args)
+4)	*n$/.*n$ (filling the width/pricision with n-th argument from va_args)
 
-5) j/z flags (working as priority ll flag)
+5)	j/z flags (working as priority ll flag)
 
-6) Colours
+6)	Colours
 
 		Red		{r-}
   		Bold Red	{r+}
